@@ -1,0 +1,81 @@
+# 📦 NPM Versioning Guide
+
+This guide provides an overview of versioning in npm, including semantic versioning and the use of symbols in `package.json`.
+
+---
+
+## 📌 Semantic Versioning (SemVer)
+
+Semantic Versioning follows the format: MAJOR.MINOR.PATCH (e.g., 1.2.3)
+
+- **MAJOR** version: Incompatible API changes.
+- **MINOR** version: Backward-compatible functionality.
+- **PATCH** version: Backward-compatible bug fixes.
+
+Example:
+
+- `1.2.3` indicates:
+  - MAJOR: 1
+  - MINOR: 2
+  - PATCH: 3
+
+---
+
+## 🔧 Version Range Symbols in `package.json`
+
+These symbols define the range of acceptable versions for dependencies.
+
+### 1. Caret (`^`)
+
+- Allows updates that do not modify the left-most non-zero digit.
+- Example: `^1.2.3` matches versions `>=1.2.3 <2.0.0`.
+
+### 2. Tilde (`~`)
+
+- Allows patch-level changes if a minor version is specified.
+- Example: `~1.2.3` matches versions `>=1.2.3 <1.3.0`.
+
+### 3. Exact Version
+
+- No symbol means only the specified version is acceptable.
+- Example: `1.2.3` matches only version `1.2.3`.
+
+### 4. Wildcard (`*`)
+
+- Allows any version.
+- Example: `*` matches all versions.
+
+---
+
+## 🔢 Incrementing Versions
+
+When publishing packages, increment versions as follows:
+
+- **Patch release**: Backward-compatible bug fixes.
+  - Increment PATCH: `1.0.0` → `1.0.1`
+- **Minor release**: Backward-compatible new features.
+  - Increment MINOR: `1.0.0` → `1.1.0`
+- **Major release**: Incompatible API changes.
+  - Increment MAJOR: `1.0.0` → `2.0.0`
+
+---
+
+## ⚙️ Configuring Version Prefixes
+
+You can set the default version prefix using npm config:
+
+- Set caret (`^`) as default:
+  - `npm config set save-prefix='^'`
+- Set tilde (`~`) as default:
+  - `npm config set save-prefix='~'`
+
+---
+
+## 📚 Resources
+
+For more information, refer to the official npm documentation:
+
+- [About semantic versioning](https://docs.npmjs.com/about-semantic-versioning/)
+- [semver - npm Docs](https://docs.npmjs.com/cli/v6/using-npm/semver/)
+- [package.json - npm Docs](https://docs.npmjs.com/cli/v9/configuring-npm/package-json)
+
