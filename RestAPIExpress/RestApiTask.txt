@@ -1,0 +1,11 @@
+List all user - api/users/
+
+particular User with there id  - api/users/:id
+
+create new user = api/users
+
+edit user = api/users/:id
+
+delete user = api/users/:id
+
+
